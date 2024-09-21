@@ -7,7 +7,7 @@ import java.util.List;
 public interface ScheduleService {
     Schedule saveSchedule(Schedule schedule);
     List<Schedule> getAllSchedules();
-    List<Schedule> getScheduleByPetId(Long petId);
-    List<Schedule> getScheduleByEmployeeId(Long employeeId);
+    List<Schedule> findByPet(Long petId);
+    List<Schedule> findByEmployees(Long employeeId);
     List<Schedule> getScheduleByCustomerId(Long customerId);
 }

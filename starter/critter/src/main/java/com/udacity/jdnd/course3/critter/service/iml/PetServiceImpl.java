@@ -1,7 +1,7 @@
 package com.udacity.jdnd.course3.critter.service.iml;
 
 import com.udacity.jdnd.course3.critter.entity.Pet;
-import com.udacity.jdnd.course3.critter.exception.NotFoundException;
+import com.udacity.jdnd.course3.critter.exception.ResourceNotFoundException;
 import com.udacity.jdnd.course3.critter.repository.CustomerRepository;
 import com.udacity.jdnd.course3.critter.repository.PetRepository;
 import com.udacity.jdnd.course3.critter.service.PetService;
@@ -25,7 +25,7 @@ public class PetServiceImpl implements PetService {
 
     @Override
     public Pet findPetById(Long petId){
-        return petRepository.findById(petId).orElseThrow(NotFoundException::new);
+        return petRepository.findById(petId).orElseThrow(ResourceNotFoundException::new);
     }
 
     @Override
@@ -40,6 +40,6 @@ public class PetServiceImpl implements PetService {
 
     @Override
     public Pet getPetById(Long petId){
-        return petRepository.findById(petId).orElseThrow(NotFoundException::new);
+        return petRepository.findById(petId).orElseThrow(ResourceNotFoundException::new);
     }
 }

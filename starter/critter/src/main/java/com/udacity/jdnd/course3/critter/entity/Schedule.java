@@ -20,10 +20,10 @@ public class Schedule {
     private Long id;
 
     @ManyToMany(targetEntity = Employee.class)
-    private List<Employee> employeeIds;
+    private List<Employee> employees;
 
     @ManyToMany(targetEntity = Pet.class)
-    private List<Pet> petIds;
+    private List<Pet> pets;
 
     @ElementCollection(targetClass = EmployeeSkill.class)
     @CollectionTable(name = "schedule_activities")

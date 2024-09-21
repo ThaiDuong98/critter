@@ -5,7 +5,7 @@ import com.udacity.jdnd.course3.critter.entity.Pet;
 import com.udacity.jdnd.course3.critter.repository.CustomerRepository;
 import com.udacity.jdnd.course3.critter.repository.PetRepository;
 import com.udacity.jdnd.course3.critter.service.CustomerService;
-import com.udacity.jdnd.course3.critter.exception.NotFoundException;
+import com.udacity.jdnd.course3.critter.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer getOwnByPetId(Long petId){
         Pet pet = petRepository.findById(petId)
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(ResourceNotFoundException::new);
 
         return getCustomerById(pet.getOwner().getId());
     }

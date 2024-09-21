@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> findEmployeeForService(Set<EmployeeSkill> skills, LocalDate date){
         List<Employee> availableEmployees = new ArrayList<>();
-        List<Employee> employees = employeeRepository.findEmployeeByAvailableDays(date.getDayOfWeek());
+        List<Employee> employees = employeeRepository.findEmployeesByDaysAvailable(date.getDayOfWeek());
 
         for (Employee employee : employees) {
             if (employee.getSkills().containsAll(skills)) {
