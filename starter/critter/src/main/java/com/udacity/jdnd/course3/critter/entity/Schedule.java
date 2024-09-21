@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -31,4 +32,5 @@ public class Schedule {
     @Column(name = "activities", nullable = false)
     private Set<EmployeeSkill> activities;
 
+    private LocalDate date;
 }
