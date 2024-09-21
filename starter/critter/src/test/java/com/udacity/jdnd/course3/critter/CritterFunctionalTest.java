@@ -11,9 +11,7 @@ import com.udacity.jdnd.course3.critter.controller.ScheduleController;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.DayOfWeek;
@@ -32,7 +30,6 @@ import java.util.stream.IntStream;
  * These tests should all pass once the project is complete.
  */
 @Transactional
-@AutoConfigureMockMvc
 @SpringBootTest(classes = CritterApplication.class)
 public class CritterFunctionalTest {
 
