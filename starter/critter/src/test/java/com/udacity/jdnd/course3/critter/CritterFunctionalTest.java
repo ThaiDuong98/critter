@@ -34,6 +34,7 @@ import java.util.stream.IntStream;
  * These tests should all pass once the project is complete.
  */
 @Transactional
+@ActiveProfiles("test")
 @SpringBootTest(classes = CritterApplication.class)
 public class CritterFunctionalTest {
 

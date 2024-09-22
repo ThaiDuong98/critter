@@ -21,11 +21,12 @@ public class ConfigurationDataSource {
                 .build();
     }
 
-//    @Bean
-//    @ConfigurationProperties(prefix = "spring.datasource")
-//    public DataSource getDataSource(){
-//        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-//        dataSourceBuilder.url("jdbc:mysql://localhost:3306/critter?useSSL=false&serverTimezone=UTC");
-//        return dataSourceBuilder.build();
-//    }
+    @Bean
+    @Profile("!test")
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource getDataSource(){
+        DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+        dataSourceBuilder.url("jdbc:mysql://localhost:3306/critter?useSSL=false&serverTimezone=UTC");
+        return dataSourceBuilder.build();
+    }
 }
