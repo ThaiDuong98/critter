@@ -24,6 +24,10 @@ public class Schedule {
     private List<Employee> employees;
 
     @ManyToMany(targetEntity = Pet.class)
+    @JoinTable(name = "schedule_pet",
+            joinColumns = {@JoinColumn(name = "schedule_id")},
+            inverseJoinColumns = {@JoinColumn(name = "pet_id")}
+    )
     private List<Pet> pets;
 
     @ElementCollection(targetClass = EmployeeSkill.class)
